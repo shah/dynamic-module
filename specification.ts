@@ -68,3 +68,12 @@ export function importSpecification<T>(
     ),
   };
 }
+
+export const specFactory = new class {
+  spec<T>(target: T): Specification<T> {
+    return {
+      isSpecification: true,
+      target: target,
+    };
+  }
+}();
